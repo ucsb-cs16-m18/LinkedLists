@@ -12,19 +12,19 @@ using namespace std;
  * affect your result. 
  */
 bool isAnagram(string s1, string s2){
-  int s1_length = s1.length();
-  int s2_length = s2.length();
-  int count = 0;
+  int s1_length = s1.length(); //length of s1
+  int s2_length = s2.length(); //length of s2
+  int count = 0; //keeps count of length number
   if(s1_length != s2_length){
     return false;
-  }
+  } //automatic fail
   else{
     for(int i= 0; i<s1_length;i++){
       for(int n=0; n < s2_length; n++){
-        if(s1[n] == s2[i]){
+        if(tolower(s1[n]) == tolower(s2[i])){
           count++;
 	  if(s1.length() != 0)
-	    s1.erase(n,1); 
+	    s1.erase(n,1); //erases the character that is just evaluated so that reoccurring characters don't cause the program problems
         }
       }
     }
@@ -46,7 +46,7 @@ bool isPalindrome(const string s1){
   int x = length -1;
   int a = 0;
   for(int i=0; i < (length/2); i++){
-    if(s1[x] == s1[i]){
+    if(tolower(s1[x]) == tolower(s1[i])){
       a++;
       x--;
     }

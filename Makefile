@@ -1,5 +1,5 @@
+#CXX=g++
 CXX=clang++
-#CXX=clang++
 
 CXXFLAGS = -Wall -Wno-uninitialized
 
@@ -9,11 +9,11 @@ COMMON_OBJECT_FILES = strFuncs.o linkedListFuncs.o tddFuncs.o recLinkedListFuncs
 
 all: ${BINARIES}
 
-test: ${BINARIES}
+runtest: ${BINARIES}
 	./test
 
 test: test.o ${COMMON_OBJECT_FILES}
-	${CXX} ${CXXFLAGS} ${LDFLAGS} $^ -o $@
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $^ -o $@
 
 clean: 
 	/bin/rm/ -f ${BINARIES} *.o
